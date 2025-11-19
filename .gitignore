@@ -1,0 +1,34 @@
+# Archivos y carpetas a ignorar por Git
+
+# IDEs y Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Sistema operativo
+Thumbs.db
+Desktop.ini
+
+# Archivos temporales
+*.tmp
+*.log
+*.bak
+
+# Node modules (si se usa npm en el futuro)
+node_modules/
+package-lock.json
+
+# Archivos de compilación
+dist/
+build/
+
+# Variables de entorno
+.env
+.env.local
+
+# Archivos de respaldo
+*.backup
+*_backup.*
