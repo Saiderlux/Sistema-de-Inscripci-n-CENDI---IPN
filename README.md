@@ -27,10 +27,10 @@ Desarrollar una plataforma web responsive que permita:
 Este proyecto está siendo desarrollado por **4 integrantes** del **Equipo 4** como parte de la materia de Tecnologías para el Desarrollo de Aplicaciones Web.
 
 **Integrantes:**
-- Integrante 1 - [Nombre] - [Responsabilidad]
-- Integrante 2 - [Nombre] - [Responsabilidad]
-- Integrante 3 - [Nombre] - [Responsabilidad]
-- Integrante 4 - [Nombre] - [Responsabilidad]
+- Integrante 1 - [REGINA] - [Responsabilidad]
+- Integrante 2 - [PAOLA] - [Responsabilidad]
+- Integrante 3 - [VICTOR] - [Responsabilidad]
+- Integrante 4 - [SAID] - [Responsabilidad]
 
 ## 🚀 Tecnologías Utilizadas
 
