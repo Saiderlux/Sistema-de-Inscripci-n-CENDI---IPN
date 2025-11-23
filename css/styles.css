@@ -4,15 +4,73 @@
  * Estilos personalizados
  */
 
-/* TODO: Agregar estilos personalizados según el diseño del equipo */
 
-body {
-    font-family: Arial, sans-serif;
+:root {
+  --nav-footer: #611232;
+  --letra-cuerpo: white; /*y otros detalles*/
+  --letra-secundaria: #363636;
+  --opacidades: rgba(0, 0, 0, 0.45);
+}
+/*ESTILOS PERSONALIZADOS DE LOS NAVBAR GUINDA*/
+.navbar{
+    background-color: var(--nav-footer);
+    
 }
 
-/* TODO: Estilos para el navbar */
+.text .nav-link{
+   color: var(--letra-cuerpo);
+   font-weight: 400;
+}
+/*ESTILOS PERSONALIZADOS DE LOS NAVBAR BLANCOS*/
+.d-flex{
+    display: flex;
+}
+.text-secondary #home-tab{
+    color:var(--letra-secundaria);
+    font-weight: 400;
+}
+.text-tertiary .nav-link{
+    color: var(--letra-cuerpo);
+}
+.text-tertiary .nav-link:hover {
+    color: var(--nav-footer);
+}
+
+
+
 
 /* TODO: Estilos para el slider */
+#slide{
+    height: 50vh;
+}
+.carousel-img {
+    height: 380px;          /* Ajusta la altura a tu gusto */
+    object-fit: cover;      /* Recorta la imagen sin deformarla */
+}
+
+.carousel-indicators button {
+  
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.carousel-indicators .active {
+    background-color:var(--letra-cuerpo);
+}
+
+.carousel-caption {
+    background:var(--opacidades) ;
+    padding: 12px 20px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, var(--opacidades), rgba(0, 0, 0, 0.25)); 
+}
+.carousel-control-prev span, .carousel-control-next span{
+    border-radius: 50px;
+    border: var(--letra-secundaria), 1p solid;
+    background-color: var(--opacidades);
+}
+
 
 /* TODO: Estilos para formularios */
 
