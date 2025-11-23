@@ -51,12 +51,13 @@ Este proyecto está siendo desarrollado por **4 integrantes** del **Equipo 4** c
 Proyecto_WEB/
 │
 ├── index.html                # Index en la raíz y los demás HTML en la misma carpeta raíz
-├── about.html                # Sección "Acerca de"
-├── contact.html              # Formulario de contacto
-├── servicios.html            # Página de servicios
+├── inicio.html               # ¿que son los cendi? *poner un video de la pag oficial, link a las redes oficiales
+├── inscripción.html          # formulario
+├── acceso.html               # respectivo form (instrucciones pág 2 segunda palomita)
+├── administración.html       # respectivo form (instrucciones pág 2 segunda palomita)
 │
 ├── css/
-│   └── styles.css            # Estilos globales y personalizados
+│   └── styles.css            # Estilos globales y personalizados (poner siempre colores de bg y de letra con variables de css
 │
 ├── js/
 │   ├── script.js             # Comportamiento general de la página
