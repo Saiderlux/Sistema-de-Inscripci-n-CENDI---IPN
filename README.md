@@ -49,26 +49,32 @@ Este proyecto está siendo desarrollado por **4 integrantes** del **Equipo 4** c
 
 ```
 Proyecto_WEB/
-├── index.html              # Página principal con slider de noticias COCENDI
-├── pages/
-│   ├── inscripcion.html   # Formulario de inscripción (2 secciones)
-│   ├── acceso.html        # Formulario de inicio de sesión para trabajadores
-│   └── admin.html         # Formulario de acceso para administradores
+│
+├── index.html                # Index en la raíz y los demás HTML en la misma carpeta raíz
+├── about.html                # Sección "Acerca de"
+├── contact.html              # Formulario de contacto
+├── servicios.html            # Página de servicios
+│
 ├── css/
-│   └── styles.css         # Estilos personalizados del proyecto
+│   └── styles.css            # Estilos globales y personalizados
+│
 ├── js/
-│   ├── script.js          # JavaScript principal
-│   ├── validaciones.js    # Validaciones con expresiones regulares
-│   └── formulario.js      # Lógica del formulario de inscripción
+│   ├── script.js             # Comportamiento general de la página
+│   ├── validaciones.js       # Validaciones con Exp.Reg. para formularios
+│   └── formulario.js         # Lógica específica del formulario de inscripción
+│
 ├── assets/
 │   ├── images/
-│   │   ├── logo-ipn.png       # Logo oficial del IPN
-│   │   ├── logo-cocendi.png   # Logo de COCENDI
-│   │   ├── logo-equipo.png    # Logo del equipo (favicon)
-│   │   └── slider/            # Imágenes para el slider de noticias
-│   └── favicon.ico            # Ícono del equipo para la página
-├── README.md                  # Este archivo
+│   │   ├── logo-ipn.png         # Logo oficial del IPN
+│   │   ├── logo-cocendi.png     # Logo institucional COCENDI
+│   │   ├── logo-equipo.png      # Logo o ícono del equipo
+│   │   └── slider/              # Imágenes del carrusel/slider
+│   │
+│   └── favicon.ico           # Ícono (favicon) del sitio
+│
+├── README.md                 # Documentación del proyecto
 └── .gitignore                # Archivos ignorados por Git
+
 ```
 
 ## 📝 Funcionalidades Principales
