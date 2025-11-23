@@ -10,6 +10,8 @@
   --letra-cuerpo: white; /*y otros detalles*/
   --letra-secundaria: #363636;
   --opacidades: rgba(0, 0, 0, 0.45);
+  --footer-gris: #333333;
+  --letra--footer-gris: #cccccc;
 }
 /*ESTILOS PERSONALIZADOS DE LOS NAVBAR GUINDA*/
 .navbar{
@@ -39,13 +41,13 @@
 
 
 
-/* TODO: Estilos para el slider */
+/* Estilos para el slider */
 #slide{
     height: 50vh;
 }
 .carousel-img {
-    height: 380px;          /* Ajusta la altura a tu gusto */
-    object-fit: cover;      /* Recorta la imagen sin deformarla */
+    height: 380px;          
+    object-fit: cover;     
 }
 
 .carousel-indicators button {
@@ -70,7 +72,21 @@
     border: var(--letra-secundaria), 1p solid;
     background-color: var(--opacidades);
 }
-
+/*Estilos footer gris*/
+.foot-gris{
+    background-color: var(--footer-gris);
+    color: var(--letra--footer-gris);
+}
+.foot-gris small {
+  font-size: 0.75rem; /* más chico que el normal */
+}
+/*Estilos footer guinda*/
+.footer-guinda-container{
+    background-color: var(--nav-footer);
+}
+.footer-guinda-container p{
+    font-weight: 100;
+}
 
 /* TODO: Estilos para formularios */
 
