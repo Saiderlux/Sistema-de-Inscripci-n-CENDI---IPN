@@ -10,6 +10,7 @@
   --letra-cuerpo: white; /*y otros detalles*/
   --letra-secundaria: #363636;
   --opacidades: rgba(0, 0, 0, 0.45);
+  --opacidades-2:  rgba(255, 255, 255, 0.192);
   --footer-gris: #333333;
   --letra--footer-gris: #cccccc;
 }
@@ -23,6 +24,27 @@
    color: var(--letra-cuerpo);
    font-weight: 400;
 }
+.nav-item a{
+    transition: all 0.5s ease;
+}
+.navbar-nav .nav-link{
+    font-weight: 400;
+    font-size: medium;
+}
+.navbar-nav .nav-link button{
+    background-color:var(--nav-footer);
+    border: #611232;
+    color: var(--letra-cuerpo);
+    width: 100px;
+    height: 50px; ;
+}
+.navbar-nav .nav-link button:hover{
+    background-color: var(--opacidades-2);
+    opacity: 0.5;
+    transition: all 0.5s ease;
+    color: var(--letra-cuerpo);
+}
+
 /*ESTILOS PERSONALIZADOS DE LOS NAVBAR BLANCOS*/
 .d-flex{
     display: flex;
@@ -37,7 +59,13 @@
 .text-tertiary .nav-link:hover {
     color: var(--nav-footer);
 }
-
+.nav-tabs a{
+    text-decoration: none;
+}
+#home-tab:hover {
+    transition: all 0.5s ease;
+    color:var(--nav-footer);
+}
 
 
 
@@ -72,6 +100,27 @@
     border: var(--letra-secundaria), 1p solid;
     background-color: var(--opacidades);
 }
+.carousel-caption:hover{
+    background-color: var(--opacidades);
+    transition: all 0.5s ease;
+}
+.caption-fade {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+}
+
 /*Estilos footer gris*/
 .foot-gris{
     background-color: var(--footer-gris);
