@@ -137,6 +137,31 @@
     font-weight: 100;
 }
 
-/* TODO: Estilos para formularios */
+/*Estilos para formularios */
+#titulo-form{
+    color: var(--nav-footer);
+}
+.btn-form{
+    background-color: var(--nav-footer);
+    border: #363636 1px solid;
+}
+.btn-form:hover{
+    background-color: var(--opacidades);
+    
+    transition: all 0.5s ease;
+}
+/*estilos para la página de confirmación de datos*/
+.mnsj-confirmacion{
+    background-color: var(--nav-footer);
+    width: 800px;
+    display: flex;
+    border-radius: 20px;
+    padding: 0 9px;
+}
+.mnsj-confirmacion p{
+    color: var(--letra--footer-gris);
+    font-size: x-large;
+    text-align: center;
+}
 
 /* TODO: Estilos responsive */

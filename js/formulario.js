@@ -3,6 +3,17 @@
  * Equipo 4 - Tecnologías para la Web
  * Lógica del formulario de inscripción
  */
+/*funciones para agregar otro en caso de no ser alcaldía*/ 
+function mostrarOtro() {
+    const select = document.getElementById("GRUPO");
+    const otro = document.getElementById("otro-container");
+
+    if (select.value === "otro") {
+        otro.style.display = "block";
+    } else {
+        otro.style.display = "none";
+    }
+}
 
 // TODO: Implementar lógica del formulario
 
