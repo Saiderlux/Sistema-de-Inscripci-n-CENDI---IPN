@@ -374,10 +374,11 @@ stilos para formularios */
     width: 800px;
     display: flex;
     border-radius: 20px;
-    padding: 0 9px;
+    padding: 1px  9px 0;
+    font-weight:500 ;
 }
 .mnsj-confirmacion p{
-    color: var(--letra--footer-gris);
+    color: var(--letra-cuerpo);
     font-size: x-large;
     text-align: center;
 }
@@ -389,4 +390,7 @@ stilos para formularios */
 #alebrijes-title{
   color: var(--letra-cuerpo);
 }
+
+
+
 /* TODO: Estilos responsive */
