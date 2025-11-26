@@ -53,6 +53,7 @@
     color:var(--letra-secundaria);
     font-weight: 400;
 }
+/*ESTILOS NAV BAR GRIS*/
 .text-tertiary .nav-link{
     color: var(--letra-cuerpo);
 }
@@ -70,8 +71,21 @@
 
 
 /* Estilos para el slider */
-#slide{
-    height: 50vh;
+.carousel-container{
+mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    var(--opacidades-2)
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    var(--opacidades-2)
+  );
 }
 .carousel-img {
     height: 380px;          
@@ -104,7 +118,7 @@
     background-color: var(--opacidades);
     transition: all 0.5s ease;
 }
-.caption-fade {
+.caption-fade{
   -webkit-mask-image: linear-gradient(
     to right,
     transparent,
@@ -120,6 +134,23 @@
     transparent
   );
 }
+
+
+/*estilos banner definición*/
+.banner-title{
+    color:var(--letra-cuerpo);
+}
+.banner-text{
+    text-align: justify;
+    color: var(--letra-cuerpo);
+}
+.banner-container{
+    background-color: var(--footer-gris);
+    overflow: hidden;
+}
+
+/*PARALLAX*/
+
 
 /*Estilos footer gris*/
 .foot-gris{
