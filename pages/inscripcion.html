@@ -3,10 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscripción CENDI</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Formulario de Inscripción CENDI - Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
+    <nav class="navbar">
+    <div class="container">
+    
+      <a class="navbar-brand" href="https://www.gob.mx/" target="_blank">
+        <img src="../assets/images/logo_blanco.svg" alt="Bootstrap" width="80" height="30">
+      </a>
+    
+    <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+    
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav text">
+        <a class="nav-link" href="https://www.gob.mx/" target="_blank"> <button>Trámites</button></a>
+        <a class="nav-link" href="https://www.gob.mx/gobierno" target="_blank"><button>Gobierno</button></a>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+  </div>
+</nav>
+
+<!--BARRA DE NAVEGACIÓN, PERO DE UN POQUITO MÁS ABAJO (la blanquita) :) -->
+<section class="d-flex">
+<ul class="nav nav-tabs ms-auto text-secondary" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+   <a href="https://www.ipn.mx/directorio-telefonico.html" target="_blank"> <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">DIRECTORIO</button></a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a href="https://www.ipn.mx/correo-electronico.html" target="_blank"><button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">CORREO</button></a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a href="https://www.ipn.mx/calendario-academico.html" target="_blank"><button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">CALENDARIO</button></a>
+  </li>
+    <li class="nav-item" role="presentation">
+      <a href="https://www.ipn.mx/transparencia/" target="_blank"><button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">TRANSPARENCIA</button></a>
+  </li>
+    <li class="nav-item" role="presentation">
+      <a href="https://www.ipn.mx/proteccion-datos-personales/" target="_blank">
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">PROTECCIÓN DE DATOS</button></a>
+  </li>
+</ul>
+</section>
+<!--barra de navegación, pero la parte de los logos-->
+<div class="container py-3">
+  <div class="row align-items-center text-center">
+
+  
+    <div class="col-md-6 d-flex justify-content-center align-items-center gap-3 ms-5">
+      <a href="https://www.gob.mx/sep" target="_blank"><img src="../assets/images/placa-educacion.svg" alt="SEP" height="110"></a>
+      <a href="https://www.ipn.mx/cocendi/"><img src="../assets/images/cocendi_logo.png"target="_blank" alt="IPN" height="90"></a>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center align-items-center gap-3">
+      
+     
+    </div>
+
+  </div>
+</div>
+<!--SECCIÓN DEL NAVBAR PRINCIPAL (COLOR GRIS)-->
+<section class="container-fluid bg-secondary p-3 text-tertiary">
+   <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link" href="../index.html" target="_blank">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./CENDI.HTML" target="_blank">Inscripción</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./acceso.html">Acceso</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./admin.html">Administración</a>
+      </li>
+   </ul>
+</section>
 
     <div class="container my-5">
         <h1 class="mb-4 text-center text-primary">Inscripción CENDI</h1>
@@ -39,19 +117,28 @@
                         <label for="FECHANNINO" class="form-label">Fecha de Nacimiento</label>
                         <input type="date" class="form-control" id="FECHANNINO" name="FECHANNINO" required>
                     </div>
+
                     <div class="col-md-4">
-                        <label for="CURPNINO" class="form-label">CURP</label>
-                        <input type="text" class="form-control" id="CURPNINO" name="CURPNINO" maxlength="18" required>
+                    <label for="CURPNINO" class="form-label">CURP</label>
+                    <input type="text" class="form-control" id="CURPNINO" name="CURPNINO" maxlength="18" required>
+                    <div class="invalid-feedback-custom text-danger" id="CURPNINO_ERROR" style="display:none;">
+                    El formato de la CURP es incorrecto (4 letras, 6 dígitos, 6 letras, 2 alfanuméricos).
+                    </div>
                     </div>
 
                     <div class="col-md-4">
                         <label for="SANGRE" class="form-label">Grupo Sanguíneo y Rh</label>
                         <input type="text" class="form-control" id="SANGRE" name="SANGRE" placeholder="Ej: A+" required>
                     </div>
+
                     <div class="col-md-4">
-                        <label for="CONTACTONINO" class="form-label">Teléfono (Contacto)</label>
-                        <input type="tel" class="form-control" id="CONTACTONINO" name="CONTACTONINO" pattern="[0-9]{10}" required>
+                    <label for="CONTACTONINO" class="form-label">Teléfono (Contacto)</label>
+                    <input type="tel" class="form-control" id="CONTACTONINO" name="CONTACTONINO" maxlength="10" required>
+                    <div class="invalid-feedback-custom text-danger" id="CONTACTONINO_ERROR" style="display:none;">
+                    Debe ingresar exactamente 10 dígitos (solo números).
                     </div>
+                    </div>
+
                     <div class="col-md-4">
                         <label for="GRUPO" class="form-label">Grupo</span></label>
                         <select id="GRUPO" name="GRUPO" class="form-select" required>
@@ -69,14 +156,70 @@
                         <label for="DOMICILIONINO" class="form-label">Domicilio (Calle y Número)</label>
                         <input type="text" class="form-control" id="DOMICILIONINO" name="DOMICILIONINO" required>
                     </div>
+
                     <div class="col-md-3">
-                        <label for="ALCALDIANINO" class="form-label">Alcaldía o Municipio</label>
-                        <input type="text" class="form-control" id="ALCALDIANINO" name="ALCALDIANINO" required>
+                    <label for="ALCALDIANINO_SELECT" class="form-label">Alcaldía o Municipio</label>
+                    <select id="ALCALDIANINO_SELECT" name="ALCALDIANINO" class="form-select" required>
+                    <option value="" disabled selected>-- Selecciona una opción --</option>
+                    <option value="AO">Álvaro Obregón</option>
+                    <option value="AZ">Azcapotzalco</option>
+                    <option value="BJ">Benito Juárez</option>
+                    <option value="COY">Coyoacán</option>
+                    <option value="CUAJ">Cuajimalpa</option>
+                    <option value="CUAUH">Cuauhtémoc</option>
+                    <option value="GAM">Gustavo A. Madero</option>
+                    <option value="IZTAC">Iztacalco</option>
+                    <option value="IZTAP">Iztapalapa</option>
+                    <option value="MA">Magdalena Contreras</option>
+                    <option value="MH">Miguel Hidalgo</option>
+                    <option value="Milpa">Milpa Alta</option>
+                    <option value="TLH">Tláhuac</option>
+                    <option value="TLP">Tlalpan</option>
+                    <option value="VC">Venustiano Carranza</option>
+                    <option value="XOC">Xochimilco</option>
+                    <option value="Otro">Otro (Municipio)</option> 
+                    </select>
+                    <input type="text" class="form-control mt-2" id="ALCALDIANINO_OTRO" name="ALCALDIANINO_OTRO" placeholder="Escribe el Municipio/Alcaldía" style="display:none;" >
                     </div>
+
                     <div class="col-md-3">
-                        <label for="EFNINO" class="form-label">Entidad Federativa</label>
-                        <input type="text" class="form-control" id="EFNINO" name="EFNINO" required>
-                    </div>
+                    <label for="EFNINO" class="form-label">Entidad Federativa</label>
+                    <select id="EFNINO" name="EFNINO" class="form-select" required>
+                    <option value="" disabled selected>-- Selecciona un estado --</option>
+                    <option value="Aguascalientes">Aguascalientes</option>
+                    <option value="Baja California">Baja California</option>
+                    <option value="Baja California Sur">Baja California Sur</option>
+                    <option value="Campeche">Campeche</option>
+                    <option value="Chiapas">Chiapas</option>
+                    <option value="Chihuahua">Chihuahua</option>
+                    <option value="Coahuila">Coahuila</option>
+                    <option value="Colima">Colima</option>
+                    <option value="Ciudad de México">Ciudad de México</option>
+                    <option value="Durango">Durango</option>
+                    <option value="Guanajuato">Guanajuato</option>
+                    <option value="Guerrero">Guerrero</option>
+                    <option value="Hidalgo">Hidalgo</option>
+                    <option value="Jalisco">Jalisco</option>
+                    <option value="México">México</option>
+                    <option value="Michoacán">Michoacán</option>
+                    <option value="Morelos">Morelos</option>
+                    <option value="Nayarit">Nayarit</option>
+                    <option value="Nuevo León">Nuevo León</option>
+                    <option value="Oaxaca">Oaxaca</option>
+                    <option value="Puebla">Puebla</option>
+                    <option value="Querétaro">Querétaro</option>
+                    <option value="Quintana Roo">Quintana Roo</option>
+                    <option value="San Luis Potosí">San Luis Potosí</option>
+                    <option value="Sinaloa">Sinaloa</option>
+                    <option value="Sonora">Sonora</option>
+                    <option value="Tabasco">Tabasco</option>
+                    <option value="Tamaulipas">Tamaulipas</option>
+                    <option value="Tlaxcala">Tlaxcala</option>
+                    <option value="Veracruz">Veracruz</option>
+                    <option value="Yucatán">Yucatán</option>
+                    <option value="Zacatecas">Zacatecas</option>
+                </select>
+                </div>
 
                     <div class="col-md-4">
                         <label for="CPNINO" class="form-label">Código Postal</label>
@@ -118,23 +261,30 @@
                     </div>
 
                     <div class="col-md-4">
-                        <label for="trab_lugar_nacimiento" class="form-label">Lugar de Nacimiento></label>
-                        <input type="text" class="form-control" id="trab_lugar_nacimiento" name="trab_lugar_nacimiento" required>
+                        <label for="TLN" class="form-label">Lugar de Nacimiento></label>
+                        <input type="text" class="form-control" id="TLN" name="TLN" required>
                     </div>
                     <div class="col-md-4">
                         <label for="FECHAT" class="form-label">Fecha de Nacimiento</label>
                         <input type="date" class="form-control" id="FECHAT" name="FECHAT" required>
                     </div>
 
-                    <div class="col-md-4">
-                        <label for="CURPT" class="form-label">CURP</label>
-                        <input type="text" class="form-control" id="CURPT" name="CURPT" maxlength="18" required>
+                    <div class="col-md-3">
+                    <label for="CURPTR" class="form-label">CURP</label>
+                    <input type="text" class="form-control" id="CURPTR" name="CURPTR" maxlength="18" required>
+                    <div class="invalid-feedback-custom text-danger" id="CURPTR_ERROR" style="display:none;">
+                    El formato de la CURP es incorrecto (4 letras, 6 dígitos, 6 letras, 2 alfanuméricos).
+                    </div>
                     </div>
 
                     <div class="col-md-6">
-                        <label for="CIT" class="form-label">Correo Electrónico Institucional</label>
-                        <input type="email" class="form-control" id="CIT" name="CIT" placeholder="Ej:email@ipn.com" required>
+                    <label for="CIT" class="form-label">Correo Electrónico Institucional</label>
+                    <input type="text" class="form-control" id="CIT" name="CIT" required>
+                    <div class="invalid-feedback-custom text-danger" id="CIT" style="display:none;">
+                    Debe ser un correo institucional con el formato: usuario@ipn.mx
                     </div>
+                    </div>
+
                     <div class="col-md-6">
                         <label for="CPT" class="form-label">Correo Electrónico Personal</label>
                         <input type="email" class="form-control" id="CPT" name="CPT"  placeholder="Ej:email@gmail.com">
