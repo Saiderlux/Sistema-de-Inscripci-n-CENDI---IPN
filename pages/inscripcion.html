@@ -193,33 +193,32 @@
                     </div>
                     <div class="col-md-3">
                         <label for="ALCALDIANINO" class="form-label">Alcaldía o Municipio</label>
-                          <select id="GRUPO" name="GRUPO" class="form-select" onchange="mostrarOtro()" required>
-                              <option value="" disabled selected>-- Selecciona una alcaldía --</option>
-                              <option value="alvaro_obregon">Álvaro Obregón</option>
-                              <option value="azcapotzalco">Azcapotzalco</option>
-                              <option value="benito_juarez">Benito Juárez</option>
-                              <option value="coyoacan">Coyoacán</option>
-                              <option value="cuajimalpa">Cuajimalpa de Morelos</option>
-                              <option value="cuauhtemoc">Cuauhtémoc</option>
-                              <option value="gustavo_a_madero">Gustavo A. Madero</option>
-                              <option value="iztacalco">Iztacalco</option>
-                              <option value="iztapalapa">Iztapalapa</option>
-                              <option value="magdalena_contreras">La Magdalena Contreras</option>
-                              <option value="miguel_hidalgo">Miguel Hidalgo</option>
-                              <option value="milpa_alta">Milpa Alta</option>
-                              <option value="tlahuac">Tláhuac</option>
-                              <option value="tlalpan">Tlalpan</option>
-                              <option value="venustiano_carranza">Venustiano Carranza</option>
-                              <option value="xochimilco">Xochimilco</option>
-
-                              <option value="otro">Otro (ingresar municipio)</option>
-                          </select>
-
-                          <div id="otro-container" style="display:none; margin-top:10px;">
-                              <label for="otro-input">Ingresa el municipio:</label>
-                              <input type="text" id="otro-input" name="OTRO_MUNICIPIO" class="form-control" placeholder="Escribe el municipio…" />
-                          </div>
-
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="ALCALDIANINO" 
+                            name="ALCALDIANINO" 
+                            list="alcaldias-list"
+                            placeholder="Escribe o selecciona..."
+                            required>
+                        <datalist id="alcaldias-list">
+                            <option value="Álvaro Obregón">
+                            <option value="Azcapotzalco">
+                            <option value="Benito Juárez">
+                            <option value="Coyoacán">
+                            <option value="Cuajimalpa de Morelos">
+                            <option value="Cuauhtémoc">
+                            <option value="Gustavo A. Madero">
+                            <option value="Iztacalco">
+                            <option value="Iztapalapa">
+                            <option value="La Magdalena Contreras">
+                            <option value="Miguel Hidalgo">
+                            <option value="Milpa Alta">
+                            <option value="Tláhuac">
+                            <option value="Tlalpan">
+                            <option value="Venustiano Carranza">
+                            <option value="Xochimilco">
+                        </datalist>
                     </div>
                     <div class="col-md-3">
                         <label for="EFNINO" class="form-label">Entidad Federativa</label>
