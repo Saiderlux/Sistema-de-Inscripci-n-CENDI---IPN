@@ -6,6 +6,8 @@
     <title>CENDI</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" type="image/png" href="./assets/images/Gemini_Generated_Image_logo_e4.png">
+
 </head>
 
 <body>
@@ -13,79 +15,107 @@
     <section class="navbar">
         <div class="container">
 
-            <a class="navbar-brand" href="https://www.gob.mx/" target="_blank">
+            <div class="nav-guinda-logos">
+                         <a class="navbar-brand" href="https://www.gob.mx/" target="_blank">
             <img src="./assets/images/logo_blanco.svg" alt="logo_gobierno" width="80" height="30">
             </a>
             
             <a class="logo-equipo" href="https://es.wikipedia.org/wiki/Phocidae" target="_blank">
             <img src="./assets/images/Gemini_Generated_Image_logo_e4.png" alt="logo_eq4" width="50" >
             </a>
+            </div>
 
-                  <nav class="navbar navbar-expand-lg">
+                  <nav class="nav-guinda">
                    <div class="container-fluid">
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav text">
-                            <a class="nav-link" href="https://www.gob.mx/" target="_blank">
-                            <button>Trámites</button>
+                    <div class="" id="navbarNavAltMarkup">
+                        <div class="navbar-nav text nav-main-buttons" id="buttons">
+                            
+                              <a class="nav-link tramites" href="https://www.gob.mx/" target="_blank">
+                                <button>Trámites</button>
                             </a>
-                    <a class="nav-link" href="https://www.gob.mx/gobierno" target="_blank">
-                    <button>Gobierno</button>
-                  </a>
-              </div>
-             </div>
-                </div>
-            </nav>
+                            
+                           
+                             <a class="nav-link" href="https://www.gob.mx/gobierno" target="_blank">
+                                <button>Gobierno</button>
+                            </a>
+                           
+                        </div>
+                  </div>
+                    </div>
+                      </nav>
 
         </div>
       </section>
 
     <!--NAVBAR BLANCO -->
-    <section class="d-flex">
-        <ul class="nav nav-tabs ms-auto text-secondary" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <a href="https://www.ipn.mx/directorio-telefonico.html" target="_blank">
-                    <button class="nav-link active">DIRECTORIO</button>
-                </a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a href="https://www.ipn.mx/correo-electronico.html" target="_blank">
-                    <button class="nav-link active">CORREO</button>
-                </a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a href="https://www.ipn.mx/calendario-academico.html" target="_blank">
-                    <button class="nav-link active">CALENDARIO</button>
-                </a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a href="https://www.ipn.mx/transparencia/" target="_blank">
-                    <button class="nav-link active">TRANSPARENCIA</button>
-                </a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a href="https://www.ipn.mx/proteccion-datos-personales/" target="_blank">
-                    <button class="nav-link active">PROTECCIÓN DE DATOS</button>
-                </a>
-            </li>
-        </ul>
-    </section>
+<nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm">
+  <div class="container-fluid">
+
+    <!-- Botón hamburguesa que SOLO aparece en móvil -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#enlacesRapidos" aria-controls="enlacesRapidos" 
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menú que se muestra horizontal en escritorio y colapsado en móvil -->
+    <div class="collapse navbar-collapse justify-content-end" id="enlacesRapidos">
+      <ul class="navbar-nav text-primary small">
+        <li class="nav-item">
+          <a class="nav-link px-3" href="https://www.ipn.mx/directorio-telefonico.html" target="_blank">
+            DIRECTORIO
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" href="https://www.ipn.mx/correo-electronico.html" target="_blank">
+            CORREO
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" href="https://www.ipn.mx/calendario-academico.html" target="_blank">
+            CALENDARIO
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" href="https://www.ipn.mx/transparencia/" target="_blank">
+            TRANSPARENCIA
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" href="https://www.ipn.mx/proteccion-datos-personales/" target="_blank">
+            PROTECCIÓN DE DATOS
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+</nav>
 
     <!-- BARRA CON LOGOS -->
-    <div class="container py-3">
-             <div class="row align-items-center text-center">
+ <div class="container py-3">
+    <div class="row align-items-center text-center">
 
-                <div class="col-md-6 d-flex justify-content-center align-items-center gap-3 ms-5">
-                <a href="https://www.gob.mx/sep" target="_blank">
-                    <img src="./assets/images/placa-educacion.svg" alt="SEP" height="110">
-                </a>
-                <a href="https://www.ipn.mx/cocendi/" target="_blank">
-                    <img src="./assets/images/cocendi_logo.png" alt="IPN" height="90">
-                </a>
+        <!-- Contenedor de los logos -->
+        <div class="col-md-6 offset-md-3"> <!-- centrado horizontalmente -->
+            <div class="row justify-content-center align-items-center g-4">
+                <div class="col-sm-6 col-12 text-center">
+                    <a href="https://www.gob.mx/sep" target="_blank">
+                        <img src="./assets/images/placa-educacion.svg" alt="SEP" height="110" class="img-fluid logo-a">
+                    </a>
+                </div>
+                <div class="col-sm-6 col-12 text-center">
+                    <a href="https://www.ipn.mx/cocendi/" target="_blank">
+                        <img src="./assets/images/cocendi_logo.png" alt="IPN" height="90" class="img-fluid logo-a">
+                    </a>
+                </div>
             </div>
-            <div class="col-md-6"></div>
-
         </div>
+
+        <div class="col-md-6"></div>
     </div>
+</div>
 
     <!-- NAVBAR PRINCIPAL GRIS -->
     <section class="container-fluid bg-secondary p-3 text-tertiary">
@@ -97,89 +127,101 @@
         </ul>
     </section>
 
-    <!-- CAROUSEL -->
-    <section class="container-fluid mt-4 carousel-container ">
-    <div id="carouselExampleIndicators" class="carousel slide shadow-lg rounded overflow-hidden">
+<!-- CAROUSEL -->
+<section class="container-fluid mt-4 carousel-container">
+  <div id="carouselExampleIndicators" class="carousel slide shadow-lg rounded overflow-hidden" data-bs-ride="carousel">
 
-      <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"></button>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img src="./assets/images/Gemini_Generated_Image_desayunos.jpg" class="d-block w-100 carousel-img" alt="Nuevo Servicio de Desayunos">
+        <a href="https://www.ipn.mx/cocendi/conocenos/perspectiva-de-genero.html" target="_blank" class="text-decoration-none">
+          <div class="carousel-caption caption-fade">
+            <h5 class="display-5 fw-bold text-shadow">Nuevo Servicio de Desayunos</h5>
+            <p class="lead text-shadow">Comprometidos con el bienestar y la salud de los menores</p>
+          </div>
+        </a>
       </div>
 
-            <div class="carousel-inner">
+      <div class="carousel-item">
+        <img src="./assets/images/vacunas.jpg" class="d-block w-100 carousel-img" alt="Calendario de vacunación infantil">
+        <a href="https://www.ipn.mx/cocendi/conócenos/calidad.html" target="_blank" class="text-decoration-none">
+          <div class="carousel-caption caption-fade">
+            <h5 class="display-5 fw-bold text-shadow">Calendario de vacunación infantil</h5>
+            <p class="lead text-shadow">Revisa fechas y vacunas aplicadas</p>
+          </div>
+        </a>
+      </div>
 
-                <div class="carousel-item active ">
-                    <img src="./assets/images/Gemini_Generated_Image_desayunos.jpg" class="d-block w-100 carousel-img" alt="desayunos_cendi">
-                    <a href="https://www.ipn.mx/cocendi/conocenos/perspectiva-de-genero.html" target="_blank">
-                        <div class="carousel-caption d-none d-md-block caption-fade">
-                            <h5>Nuevo Servicio de Desayunos</h5>
-                            <p>Comprometidos con el bienestar y la salud de los menores</p>
-                        </div>
-                    </a>
-                </div>
+      <div class="carousel-item">
+        <img src="./assets/images/gemini_generated_alberca.png" class="d-block w-100 carousel-img" alt="Nueva alberca exclusiva para menores">
+        <a href="https://www.ipn.mx/deportes/" target="_blank" class="text-decoration-none">
+          <div class="carousel-caption caption-fade">
+            <h5 class="display-5 fw-bold text-shadow">Nueva alberca exclusiva para menores</h5>
+            <p class="lead text-shadow">Consulta requisitos para inscripción</p>
+          </div>
+        </a>
+      </div>
 
-                <div class="carousel-item ">
-                    <img src="./assets/images/vacunas.jpg" class="d-block w-100 carousel-img" alt="slide2">
-                    <a href="https://www.ipn.mx/cocendi/con%C3%B3cenos/calidad.html" target="_blank">
-                        <div class="carousel-caption d-none d-md-block caption-fade">
-                            <h5>Calendario de vacunación infantil</h5>
-                            <p>Revisa fechas y vacunas aplicadas</p>
-                        </div>
-                    </a>
-                </div>
+      <div class="carousel-item">
+        <img src="./assets/images/Gemini_Generated_IA.png" class="d-block w-100 carousel-img" alt="Plan de Estudio con Inteligencia Artificial">
+        <a href="https://www.ipn.mx/cocendi/conocenos/personal-politecnico.html" target="_blank" class="text-decoration-none">
+          <div class="carousel-caption caption-fade">
+            <h5 class="display-5 fw-bold text-shadow">Plan de Estudio con Inteligencia Artificial</h5>
+            <p class="lead text-shadow">Compromiso con el futuro educativo</p>
+          </div>
+        </a>
+      </div>
 
-                <div class="carousel-item ">
-                    <img src="./assets/images/gemini_generated_alberca.png" class="d-block w-100 carousel-img" alt="slide3">
-                    <a href="https://www.ipn.mx/deportes/" target="_blank">
-                        <div class="carousel-caption d-none d-md-block caption-fade">
-                            <h5>Nueva alberca exclusiva para menores</h5>
-                            <p>Consulta requisitos para inscripción</p>
-                        </div>
-                    </a>
-                </div>
+    </div>
 
-                <div class="carousel-item ">
-                    <img src="./assets/images/Gemini_Generated_IA.png" class="d-block w-100 carousel-img" alt="slide4">
-                    <a href="https://www.ipn.mx/cocendi/conocenos/personal-politecnico.html" target="_blank">
-                        <div class="carousel-caption d-none d-md-block caption-fade">
-                            <h5>Plan de Estudio con Inteligencia Artificial</h5>
-                            <p>Compromiso con el futuro educativo</p>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
-
-        </div>
-    </section>
+    <!-- Controles -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+</section>
 
     <!-- BANNER DEFINICIÓN -->
-    <div class="container-fluid  px-0 banner-container  ">
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5  ">
-            
-            <div class="col-10 col-sm-8 col-lg-4">
-                <img src="./assets/images/Gemini_Generated_burritos_banner_sinbg.png" class="d-block mx-lg-1 img-fluid" alt="Bootstrap Themes" width="300" >
-            </div>
+<!-- BANNER DEFINICIÓN -->
+<div class="container-fluid px-0 banner-container">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5 banner-def">
+        
+        <!-- IMAGEN -->
+        <div class="col-10 col-sm-12 col-lg-4 text-center text-custom-center">
+            <img src="./assets/images/Gemini_Generated_burritos_banner_sinbg.png" 
+                 class="d-block mx-auto img-fluid banner-img" 
+                 alt="Burritos banner" 
+                 width="300">
+        </div>
 
-            <div class="col-lg-8 banner-sub-container">
-                <h1 class="display-5 fw-bold lh-1 mb-3 banner-title mx-5">Coordinación de Centros de Desarrollo Infantil</h1>
-                <p class="lead banner-text mx-5">
-                   Se encarga de coordinar y dirigir el control y operación de los trámites correspondientes para el otorgamiento de la prestación del servicio de guardería a las madres y padres trabajadores del Instituto Politécnico Nacional, así como supervisar la gestión de las prestaciones al personal de la Coordinación y de los Centros de Desarrollo Infantil, en los términos de la normatividad aplicable.
-                </p>
-            </div>
-
+        <!-- TEXTO -->
+        <div class="col-lg-8 banner-sub-container col-sm-12">
+            <h1 class="display-5 fw-bold lh-1 mb-3 banner-title mx-5">
+                Coordinación de Centros de Desarrollo Infantil
+            </h1>
+            <p class="lead banner-text mx-5">
+                Se encarga de coordinar y dirigir el control y operación de los trámites correspondientes 
+                para el otorgamiento de la prestación del servicio de guardería a las madres y padres 
+                trabajadores del Instituto Politécnico Nacional, así como supervisar la gestión de las 
+                prestaciones al personal de la Coordinación y de los Centros de Desarrollo Infantil, 
+                en los términos de la normatividad aplicable.
+            </p>
         </div>
     </div>
+</div>
     <!--SEGUNDA IMG PARA EL PARALLAX-->
    <!-- SECCIÓN PARALLAX DEL PERSONAL -->
 <section class="parallax-section">
@@ -189,10 +231,6 @@
 
 
 
-
-
-
-    <!--  -->
   </div>
 
   <!-- Capa intermedia: patrón sutil o textura (opcional) -->
@@ -225,7 +263,7 @@
 <!--BANNER FLIPPED CARDS-->
 <section class="container-fluid flipped-cards-container">
   <div class="m-auto flipped-cards-title ">
-    <div class="p-2 mb-4">
+    <div class="p-2 mb-4 ">
       <h2>Actividades culturales</h2>
     </div>
   </div>
@@ -303,7 +341,7 @@
       </div>
       <div class="col-lg-6">
         <div>
-          <iframe width="120%" height="315" src="https://www.youtube.com/embed/_76w0e-YMnE?si=rInwncsSCNLwJUE4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/_76w0e-YMnE?si=rInwncsSCNLwJUE4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -341,11 +379,11 @@
           <div class="row text-white">
 
                       <div class="col-12 col-md-2 d-flex justify-content-center justify-content-md-end pe-md-5">
-                        <img src="./assets/images/logo_blanco.svg" alt="logo_gob" width="150">
+                        <img src="./assets/images/logo_blanco.svg" alt="logo_gob" width="150" id="image">
                       </div>
 
                       
-                      <div class="col-md-3 mb-4">
+                      <div class="col-md-3 mb-4 ">
                         <h5 class="fw-bold">Enlaces</h5>
                         <a href="https://www.ipn.mx/" target="_blank">Participa</a>
                         <a href="https://www.ipn.mx/" target="_blank">Marco jurídico</a>
@@ -355,7 +393,7 @@
                       </div>
 
           
-                    <div class="col-md-3 mb-4">
+                    <div class="col-md-3 mb-4 ">
                       <h5 class="fw-bold">¿Qué es gob.mx?</h5>
                       <p>Es el portal único de trámites, información y participación ciudadana. <a href="https://www.gob.mx/que-es-gobmx" target="_blank" class="special">Leer más</a></p>
                       <a href="https://datos.gob.mx/" target="_blank">Portal de datos abietos</a>
@@ -364,7 +402,7 @@
                     </div>
 
           
-                    <div class="col-md-3 mb-4">
+                    <div class="col-md-3 mb-4 ">
                       <p><a href="https://sidec.buengobierno.gob.mx/#!/" target="_blank" class="text-white fw-bold special">Denuncia contra servidores públicos</a></p>
 
                       <div class="d-flex align-items-center gap-2 mt-3">
@@ -406,5 +444,6 @@ document.addEventListener("DOMContentLoaded", function () {
   handleParallax(); // posición inicial
 });
 </script>
+
 </body>
 </html>

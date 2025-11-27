@@ -48,16 +48,19 @@
   margin-left:55px ;
   margin-right: 0px;
 }
-.logo-equipo{
-  margin-right:700px;
+.nav-guinda-logos{
+  display: flex;
+  justify-content:space-between;
 }
-/*ESTILOS PERSONALIZADOS DE LOS NAVBAR BLANCOS*/
-.d-flex{
-    display: flex;
+.logo-equipo{
+  margin-left: 10px;
 }
 .text-secondary #home-tab{
     color:var(--letra-secundaria);
     font-weight: 400;
+}
+#buttons{
+  display: flex;
 }
 /*ESTILOS NAV BAR GRIS*/
 .text-tertiary .nav-link{
@@ -234,20 +237,28 @@ mask-image: linear-gradient(
 
 
 /*FLIPPED CARDS ACTIVIDADES CULTURALES*/
-.flipped-cards-container{
+.flipped-cards-container {
   background-color: var(--footer-gris);
   padding: 20px 0 15px;
 }
-.flipped-cards-container .flipped-cards-title{
+
+
+.flipped-cards-container .flipped-cards-title {
   background-color: var(--nav-footer);
-  width: 500px;
+  width: 100%;            
+  max-width: 500px;       
+  margin: 0 auto;         
   text-align: center;
-  border-radius: 20px ;
-  
+  border-radius: 20px;
 }
-.flipped-cards-container h2{
+
+.flipped-cards-container h2 {
   color: var(--letra-cuerpo);
+  font-size: 1.8rem;
 }
+
+
+
 .cards-sub-container{
   display: flex;
   justify-content: space-around;
@@ -393,4 +404,187 @@ stilos para formularios */
 
 
 
-/* TODO: Estilos responsive */
+/* ESTILOS RESPONSIVOS */
+
+@media (max-width: 992px) {
+
+  .responsive-logo-bar img{
+      width:90%;
+      height: 90%;
+  }
+}
+@media (min-width: 400px) and (max-width: 600px) {
+
+ .logo-a{
+        width:40%;
+      height: 90%;
+ }
+  #image{
+      max-width: 50px;
+    }
+  
+}
+
+
+
+
+/* Altura responsive del carousel */
+.carousel-container .carousel {
+  max-height: 80vh;
+  height: 80vh;
+}
+
+.carousel-container .carousel-img {
+  height: 80vh;
+  object-fit: cover;           /* Importante: evita que las imágenes se deformen */
+  object-position: center;
+}
+
+/* Caption siempre visible y responsive */
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+/* Texto legible en todos los tamaños */
+.carousel-caption h5 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+/* Sombras para mejor legibilidad */
+.text-shadow {
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+}
+
+/* Responsive breakpoints */
+@media (max-width: 992px) {
+  .carousel-container .carousel,
+  .carousel-container .carousel-img {
+    height: 70vh;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 2rem;
+  }
+  .carousel-caption p {
+    font-size: 1.1rem;
+  }
+  .banner-img {
+        max-width: 250px;
+    }
+    #image{
+      max-width: 100px;
+    }
+    
+}
+
+@media (max-width: 768px) {
+  .carousel-container .carousel,
+  .carousel-container .carousel-img {
+    height: 60vh;
+  }
+  
+  .carousel-caption {
+    padding: 3rem 1.5rem 1.5rem;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 1.8rem;
+  }
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+  .banner-def{
+    margin: 0 auto;
+  }
+  .text-custom-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  .flipped-cards-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .flipped-cards-container .flipped-cards-title {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-container .carousel,
+  .carousel-container .carousel-img {
+    height: 55vh;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 1.5rem;
+  }
+  .carousel-caption p {
+    font-size: 0.95rem;
+  }
+  
+  .carousel-indicators {
+    bottom: 5px;
+  }
+    .flipped-cards-container h2 {
+    font-size: 1.2rem ;
+  }
+  .flipped-cards-container .flipped-cards-title {
+    border-radius: 10px;
+    max-width: 300px;
+  }
+  
+}
+
+.caption-fade {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (min-width: 1200px) {     /* xl y superiores */
+    .banner-img {
+        max-width: 300px;
+    }
+      #image{
+      max-width: 100px;
+    }
+}
+@media (min-width: 768px) {
+  .nav-main-buttons {
+    flex-direction: row; /* Se ponen uno al lado del otro */
+    justify-content: center;
+  }
+
+  .nav-main-buttons a button {
+    width: auto; /* Ya no ocupan todo el ancho */
+  }
+    #image{
+      max-width: 100px;
+    }
+}
+
+
