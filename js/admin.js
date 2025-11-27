@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Bloquear caracteres inválidos en el campo de correo
+    bloquearCaracteresInvalidosEnEmail(inputUsuario);
+
     // Validación en tiempo real de la contraseña
     inputPassword.addEventListener('blur', function() {
         validarCampoPasswordAdmin(this);

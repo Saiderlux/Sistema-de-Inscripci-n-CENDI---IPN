@@ -120,6 +120,26 @@ function inicializarValidaciones() {
     configurarValidacionTiempoReal('ESCOLARIDAD', validarEscolaridad);
     configurarValidacionTiempoReal('ADSCRIPCION', validarLugar);
     configurarValidacionTiempoReal('HORARIO', validarHorario);
+    
+    // Bloquear caracteres inválidos en campos de nombre
+    bloquearCaracteresInvalidosEnNombre(document.getElementById('APP'));
+    bloquearCaracteresInvalidosEnNombre(document.getElementById('APM'));
+    bloquearCaracteresInvalidosEnNombre(document.getElementById('NOMBRES'));
+    bloquearCaracteresInvalidosEnNombre(document.getElementById('APPT'));
+    bloquearCaracteresInvalidosEnNombre(document.getElementById('APMT'));
+    bloquearCaracteresInvalidosEnNombre(document.getElementById('NOMBREST'));
+    
+    // Bloquear caracteres inválidos en campos de lugar
+    bloquearCaracteresInvalidosEnLugar(document.getElementById('LUGARNINO'));
+    bloquearCaracteresInvalidosEnLugar(document.getElementById('trab_lugar_nacimiento'));
+    bloquearCaracteresInvalidosEnLugar(document.getElementById('ADSCRIPCION'));
+    
+    // Bloquear caracteres inválidos en número de empleado
+    bloquearCaracteresInvalidosEnNumeroEmpleado(document.getElementById('NumE'));
+    
+    // Bloquear caracteres inválidos en emails
+    bloquearCaracteresInvalidosEnEmail(document.getElementById('CIT'));
+    bloquearCaracteresInvalidosEnEmail(document.getElementById('CPT'));
 }
 
 // ========== RECOPILACIÓN DE DATOS ==========

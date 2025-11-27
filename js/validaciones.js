@@ -94,6 +94,109 @@ function validarNombre(valor) {
 }
 
 /**
+ * Bloquea la entrada de caracteres no permitidos en campos de nombre
+ * Muestra un tooltip temporal cuando se intenta escribir un carácter inválido
+ * @param {HTMLElement} campo - Elemento del campo de entrada
+ */
+function bloquearCaracteresInvalidosEnNombre(campo) {
+    if (!campo) return;
+    
+    // Crear tooltip si no existe
+    let tooltip = campo.parentElement.querySelector('.tooltip-caracteres-invalidos');
+    if (!tooltip) {
+        tooltip = document.createElement('div');
+        tooltip.className = 'tooltip-caracteres-invalidos';
+        tooltip.style.cssText = `
+            position: absolute;
+            background-color: #dc3545;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            white-space: nowrap;
+            animation: fadeInOut 2s ease-in-out;
+        `;
+        tooltip.textContent = '⚠️ Solo se permiten letras y espacios';
+        campo.parentElement.style.position = 'relative';
+        campo.parentElement.appendChild(tooltip);
+        
+        // Agregar animación CSS
+        if (!document.getElementById('tooltip-animation-styles')) {
+            const style = document.createElement('style');
+            style.id = 'tooltip-animation-styles';
+            style.textContent = `
+                @keyframes fadeInOut {
+                    0% { opacity: 0; transform: translateY(-5px); }
+                    15% { opacity: 1; transform: translateY(0); }
+                    85% { opacity: 1; transform: translateY(0); }
+                    100% { opacity: 0; transform: translateY(-5px); }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+    }
+    
+    // Evento para bloquear caracteres inválidos
+    campo.addEventListener('keypress', function(e) {
+        const char = e.key;
+        // Permitir teclas especiales (backspace, delete, tab, enter, etc.)
+        if (e.ctrlKey || e.altKey || e.metaKey || 
+            char === 'Backspace' || char === 'Delete' || 
+            char === 'Tab' || char === 'Enter' || char === 'ArrowLeft' || char === 'ArrowRight') {
+            return;
+        }
+        
+        // Verificar si es letra, espacio o acento válido
+        const esValido = /^[a-záéíóúñA-ZÁÉÍÓÚÑ\s]$/.test(char);
+        
+        if (!esValido) {
+            e.preventDefault(); // Bloquear la entrada
+            
+            // Mostrar tooltip
+            tooltip.style.display = 'block';
+            tooltip.style.left = '0';
+            tooltip.style.top = '-35px';
+            
+            // Ocultar tooltip después de 2 segundos
+            setTimeout(() => {
+                tooltip.style.display = 'none';
+            }, 2000);
+        }
+    });
+    
+    // También bloquear al pegar
+    campo.addEventListener('paste', function(e) {
+        e.preventDefault();
+        const texto = (e.clipboardData || window.clipboardData).getData('text');
+        // Filtrar solo caracteres válidos
+        const textoLimpio = texto.replace(/[^a-záéíóúñA-ZÁÉÍÓÚÑ\s]/g, '');
+        
+        if (texto !== textoLimpio) {
+            // Mostrar tooltip si se filtraron caracteres
+            tooltip.style.display = 'block';
+            tooltip.style.left = '0';
+            tooltip.style.top = '-35px';
+            setTimeout(() => {
+                tooltip.style.display = 'none';
+            }, 2000);
+        }
+        
+        // Insertar el texto limpio
+        const inicio = this.selectionStart;
+        const fin = this.selectionEnd;
+        const valorActual = this.value;
+        this.value = valorActual.substring(0, inicio) + textoLimpio + valorActual.substring(fin);
+        this.selectionStart = this.selectionEnd = inicio + textoLimpio.length;
+        
+        // Disparar evento input para actualizar validaciones
+        this.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+}
+
+/**
  * Valida un teléfono de 10 dígitos
  * @param {string} valor - Valor a validar
  * @returns {object} - {valido: boolean, mensaje: string}
@@ -386,4 +489,216 @@ function limpiarValidacion(campo) {
     if (feedback) {
         feedback.textContent = '';
     }
+}
+
+/**
+ * Bloquea la entrada de caracteres no permitidos en campos de lugar
+ * Muestra un tooltip temporal cuando se intenta escribir un carácter inválido
+ * @param {HTMLElement} campo - Elemento del campo de entrada
+ */
+function bloquearCaracteresInvalidosEnLugar(campo) {
+    if (!campo) return;
+    
+    // Crear tooltip si no existe
+    let tooltip = campo.parentElement.querySelector('.tooltip-caracteres-invalidos');
+    if (!tooltip) {
+        tooltip = document.createElement('div');
+        tooltip.className = 'tooltip-caracteres-invalidos';
+        tooltip.style.cssText = `
+            position: absolute;
+            background-color: #dc3545;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            white-space: nowrap;
+            animation: fadeInOut 2s ease-in-out;
+        `;
+        tooltip.textContent = '⚠️ Solo se permiten letras, espacios y puntuación';
+        campo.parentElement.style.position = 'relative';
+        campo.parentElement.appendChild(tooltip);
+    }
+    
+    // Evento para bloquear caracteres inválidos
+    campo.addEventListener('keypress', function(e) {
+        const char = e.key;
+        if (e.ctrlKey || e.altKey || e.metaKey || 
+            char === 'Backspace' || char === 'Delete' || 
+            char === 'Tab' || char === 'Enter' || char === 'ArrowLeft' || char === 'ArrowRight') {
+            return;
+        }
+        
+        const esValido = /^[a-záéíóúñA-ZÁÉÍÓÚÑ\s,.-]$/.test(char);
+        
+        if (!esValido) {
+            e.preventDefault();
+            tooltip.style.display = 'block';
+            tooltip.style.left = '0';
+            tooltip.style.top = '-35px';
+            setTimeout(() => { tooltip.style.display = 'none'; }, 2000);
+        }
+    });
+    
+    campo.addEventListener('paste', function(e) {
+        e.preventDefault();
+        const texto = (e.clipboardData || window.clipboardData).getData('text');
+        const textoLimpio = texto.replace(/[^a-záéíóúñA-ZÁÉÍÓÚÑ\s,.-]/g, '');
+        
+        if (texto !== textoLimpio) {
+            tooltip.style.display = 'block';
+            tooltip.style.left = '0';
+            tooltip.style.top = '-35px';
+            setTimeout(() => { tooltip.style.display = 'none'; }, 2000);
+        }
+        
+        const inicio = this.selectionStart;
+        const fin = this.selectionEnd;
+        const valorActual = this.value;
+        this.value = valorActual.substring(0, inicio) + textoLimpio + valorActual.substring(fin);
+        this.selectionStart = this.selectionEnd = inicio + textoLimpio.length;
+        this.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+}
+
+/**
+ * Bloquea la entrada de caracteres no permitidos en número de empleado
+ * Muestra un tooltip temporal cuando se intenta escribir un carácter inválido
+ * @param {HTMLElement} campo - Elemento del campo de entrada
+ */
+function bloquearCaracteresInvalidosEnNumeroEmpleado(campo) {
+    if (!campo) return;
+    
+    let tooltip = campo.parentElement.querySelector('.tooltip-caracteres-invalidos');
+    if (!tooltip) {
+        tooltip = document.createElement('div');
+        tooltip.className = 'tooltip-caracteres-invalidos';
+        tooltip.style.cssText = `
+            position: absolute;
+            background-color: #dc3545;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            white-space: nowrap;
+            animation: fadeInOut 2s ease-in-out;
+        `;
+        tooltip.textContent = '⚠️ Solo se permiten letras y números';
+        campo.parentElement.style.position = 'relative';
+        campo.parentElement.appendChild(tooltip);
+    }
+    
+    campo.addEventListener('keypress', function(e) {
+        const char = e.key;
+        if (e.ctrlKey || e.altKey || e.metaKey || 
+            char === 'Backspace' || char === 'Delete' || 
+            char === 'Tab' || char === 'Enter' || char === 'ArrowLeft' || char === 'ArrowRight') {
+            return;
+        }
+        
+        const esValido = /^[a-zA-Z0-9]$/.test(char);
+        
+        if (!esValido) {
+            e.preventDefault();
+            tooltip.style.display = 'block';
+            tooltip.style.left = '0';
+            tooltip.style.top = '-35px';
+            setTimeout(() => { tooltip.style.display = 'none'; }, 2000);
+        }
+    });
+    
+    campo.addEventListener('paste', function(e) {
+        e.preventDefault();
+        const texto = (e.clipboardData || window.clipboardData).getData('text');
+        const textoLimpio = texto.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+        
+        if (texto !== textoLimpio) {
+            tooltip.style.display = 'block';
+            tooltip.style.left = '0';
+            tooltip.style.top = '-35px';
+            setTimeout(() => { tooltip.style.display = 'none'; }, 2000);
+        }
+        
+        const inicio = this.selectionStart;
+        const fin = this.selectionEnd;
+        const valorActual = this.value;
+        this.value = valorActual.substring(0, inicio) + textoLimpio + valorActual.substring(fin);
+        this.selectionStart = this.selectionEnd = inicio + textoLimpio.length;
+        this.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+}
+
+/**
+ * Bloquea la entrada de caracteres no permitidos en campos de email
+ * Muestra un tooltip temporal cuando se intenta escribir un carácter inválido
+ * @param {HTMLElement} campo - Elemento del campo de entrada
+ */
+function bloquearCaracteresInvalidosEnEmail(campo) {
+    if (!campo) return;
+    
+    let tooltip = campo.parentElement.querySelector('.tooltip-caracteres-invalidos');
+    if (!tooltip) {
+        tooltip = document.createElement('div');
+        tooltip.className = 'tooltip-caracteres-invalidos';
+        tooltip.style.cssText = `
+            position: absolute;
+            background-color: #dc3545;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            white-space: nowrap;
+            animation: fadeInOut 2s ease-in-out;
+        `;
+        tooltip.textContent = '⚠️ Caracteres no válidos para email';
+        campo.parentElement.style.position = 'relative';
+        campo.parentElement.appendChild(tooltip);
+    }
+    
+    campo.addEventListener('keypress', function(e) {
+        const char = e.key;
+        if (e.ctrlKey || e.altKey || e.metaKey || 
+            char === 'Backspace' || char === 'Delete' || 
+            char === 'Tab' || char === 'Enter' || char === 'ArrowLeft' || char === 'ArrowRight') {
+            return;
+        }
+        
+        const esValido = /^[a-zA-Z0-9@._-]$/.test(char);
+        
+        if (!esValido) {
+            e.preventDefault();
+            tooltip.style.display = 'block';
+            tooltip.style.left = '0';
+            tooltip.style.top = '-35px';
+            setTimeout(() => { tooltip.style.display = 'none'; }, 2000);
+        }
+    });
+    
+    campo.addEventListener('paste', function(e) {
+        e.preventDefault();
+        const texto = (e.clipboardData || window.clipboardData).getData('text');
+        const textoLimpio = texto.replace(/[^a-zA-Z0-9@._-]/g, '').toLowerCase();
+        
+        if (texto !== textoLimpio) {
+            tooltip.style.display = 'block';
+            tooltip.style.left = '0';
+            tooltip.style.top = '-35px';
+            setTimeout(() => { tooltip.style.display = 'none'; }, 2000);
+        }
+        
+        const inicio = this.selectionStart;
+        const fin = this.selectionEnd;
+        const valorActual = this.value;
+        this.value = valorActual.substring(0, inicio) + textoLimpio + valorActual.substring(fin);
+        this.selectionStart = this.selectionEnd = inicio + textoLimpio.length;
+        this.dispatchEvent(new Event('input', { bubbles: true }));
+    });
 }
