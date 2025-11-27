@@ -3,29 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Inscripción CENDI - IPN</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <title>CENDI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <!-- TODO: Implementar navbar con menú Inicio, Inscripción, Acceso, Admin -->
+    <!-- TODO: falta poner el logo del equipo -->
+    <!-- TODO: a los títulos de los navbar falta hacer que lleven a algun lugar-->
+    <!-- TODO: falta hacerlo responsivo-->
+    <!-- TODO: BARRA DE NAVEGACIÓN SUPERIOR (la guinda)-->
+   <nav class="navbar">
+    <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="./assets/images/logo_blanco.svg" alt="Bootstrap" width="80" height="30">
+    </a>
+    <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
     
-    <!-- TODO: Implementar slider con mínimo 3 noticias de COCENDI -->
-    
-    <!-- TODO: Agregar contenido principal -->
-    <main class="container my-5">
-        <h1>Sistema de Inscripción CENDI</h1>
-        <p>Instituto Politécnico Nacional</p>
-    </main>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav text">
+        <a class="nav-link" href="#">Trámites</a>
+        <a class="nav-link" href="#">Gobierno</a>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+  </div>
+  
+</nav>
+    <!--BARRA DE NAVEGACIÓN, PERO DE UN POQUITO MÁS ABAJO (la blanquita) :) -->
+<section class="d-flex">
+<ul class="nav nav-tabs ms-auto text-secondary" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">DIRECTORIO</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">CORREO</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">CALENDARIO</button>
+  </li>
+    <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">TRANSPARENCIA</button>
+  </li>
+    <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">PROTECCIÓN DE DATOS</button>
+  </li>
+  
 
-    <!-- TODO: Implementar footer -->
+</ul>
+</section>
+<!--barra de navegación, pero la parte de los logos-->
+<div class="container py-3">
+  <div class="row align-items-center text-center">
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
+  
+    <div class="col-md-6 d-flex justify-content-center align-items-center gap-3 ms-5">
+      <img src="./assets/images/placa-educacion.svg" alt="SEP" height="110">
+      <img src="./assets/images/logo-ipn-horizontal.svg" alt="IPN" height="110">
+    </div>
+    <div class="col-md-6 d-flex justify-content-center align-items-center gap-3">
+      
+     
+    </div>
+
+  </div>
+</div>
+<!--SECCIÓN DEL NAVBAR PRINCIPAL (COLOR GRIS)-->
+<section class="container-fluid bg-secondary p-3 text-tertiary">
+   <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link" href="./inicio.html" target="_blank">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./">Inscripción</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Acceso</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Administración</a>
+      </li>
+   </ul>
+</section>
+<!--FALTA CAMBIAR LA SEGUNDA Y LA TERCERA NOTICIA Y PONERLES IMGS DIFERENTES-->
+<!--SLIDE CON AL MENOS TRES NOTICIAS PARA LOS TRABAJADORES DEL IPN REFERENTES AL SERVICIO QUE BRINDA EL COCENDI-->
+<section class="container my-3"> <!--margin de 3 en el eje vertical-->
+    <div id="carouselExampleIndicators" class="carousel slide shadow-lg rounded overflow-hidden">
+        
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+        </div>
+
+        <!-- Slides -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./assets/images/Gemini_Generated_Image_desayunos.jpg" class="d-block w-100 carousel-img" alt="desayunos_cendi">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Nuevo Servicio de Desayunos</h5>
+                    <p>Información relevante para trabajadores del IPN.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="./assets/images/Gemini_Generated_Image_desayunos.jpg" class="d-block w-100 carousel-img" alt="slide2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Cocina de Calidad</h5>
+                    <p>Comprometidos con el bienestar de los niños.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="./assets/images/Gemini_Generated_Image_desayunos.jpg" class="d-block w-100 carousel-img" alt="slide3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Instalaciones Seguras</h5>
+                    <p>Todos los días cuidamos lo más importante.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Flechas -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+
+<!--FOOTER GRIS Y GUINDA-->
+<footer>
+    <!--FOOTER GRIS-->
+    <section></section>
+    <!--FOOTER GUINDA-->
+    <section></section>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
 </body>
 </html>
