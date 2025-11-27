@@ -28,8 +28,8 @@ images/
 
 ## TODO
 
-- [ ] Agregar logo oficial del IPN
-- [ ] Agregar logo de COCENDI
-- [ ] Crear logo del equipo
+- [X] Agregar logo oficial del IPN
+- [X] Agregar logo de COCENDI
+- [X] Crear logo del equipo
 - [ ] Agregar imágenes para slider de noticias
 - [ ] Convertir logo del equipo a favicon.ico

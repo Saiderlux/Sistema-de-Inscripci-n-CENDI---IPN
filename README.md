@@ -45,7 +45,6 @@ Este proyecto está siendo desarrollado por **4 integrantes** del **Equipo 4** c
   - Git
   - GitHub
 
-## 📁 Estructura del Proyecto
 
 ```
 Proyecto_WEB/
@@ -57,7 +56,7 @@ Proyecto_WEB/
 ├── administración.html       # respectivo form (instrucciones pág 2 segunda palomita)
 │
 ├── css/
-│   └── styles.css            # Estilos globales y personalizados (poner siempre colores de bg y de letra con variables de css
+│   └── styles.css            # Estilos globales y personalizados poner siempre colores de bg y de letra con variables de css
 │
 ├── js/
 │   ├── script.js             # Comportamiento general de la página

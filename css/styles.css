@@ -4,16 +4,164 @@
  * Estilos personalizados
  */
 
-/* TODO: Agregar estilos personalizados según el diseño del equipo */
 
-body {
-    font-family: Arial, sans-serif;
+:root {
+  --nav-footer: #611232;
+  --letra-cuerpo: white; /*y otros detalles*/
+  --letra-secundaria: #363636;
+  --opacidades: rgba(0, 0, 0, 0.45);
+  --opacidades-2:  rgba(255, 255, 255, 0.192);
+  --footer-gris: #333333;
+  --letra--footer-gris: #cccccc;
+}
+/*ESTILOS PERSONALIZADOS DE LOS NAVBAR GUINDA*/
+.navbar{
+    background-color: var(--nav-footer);
+    
 }
 
-/* TODO: Estilos para el navbar */
+.text .nav-link{
+   color: var(--letra-cuerpo);
+   font-weight: 400;
+}
+.nav-item a{
+    transition: all 0.5s ease;
+}
+.navbar-nav .nav-link{
+    font-weight: 400;
+    font-size: medium;
+}
+.navbar-nav .nav-link button{
+    background-color:var(--nav-footer);
+    border: #611232;
+    color: var(--letra-cuerpo);
+    width: 100px;
+    height: 50px; ;
+}
+.navbar-nav .nav-link button:hover{
+    background-color: var(--opacidades-2);
+    opacity: 0.5;
+    transition: all 0.5s ease;
+    color: var(--letra-cuerpo);
+}
 
-/* TODO: Estilos para el slider */
+/*ESTILOS PERSONALIZADOS DE LOS NAVBAR BLANCOS*/
+.d-flex{
+    display: flex;
+}
+.text-secondary #home-tab{
+    color:var(--letra-secundaria);
+    font-weight: 400;
+}
+.text-tertiary .nav-link{
+    color: var(--letra-cuerpo);
+}
+.text-tertiary .nav-link:hover {
+    color: var(--nav-footer);
+}
+.nav-tabs a{
+    text-decoration: none;
+}
+#home-tab:hover {
+    transition: all 0.5s ease;
+    color:var(--nav-footer);
+}
 
-/* TODO: Estilos para formularios */
+
+
+/* Estilos para el slider */
+#slide{
+    height: 50vh;
+}
+.carousel-img {
+    height: 380px;          
+    object-fit: cover;     
+}
+
+.carousel-indicators button {
+  
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.carousel-indicators .active {
+    background-color:var(--letra-cuerpo);
+}
+
+.carousel-caption {
+    background:var(--opacidades) ;
+    padding: 12px 20px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, var(--opacidades), rgba(0, 0, 0, 0.25)); 
+}
+.carousel-control-prev span, .carousel-control-next span{
+    border-radius: 50px;
+    border: var(--letra-secundaria), 1p solid;
+    background-color: var(--opacidades);
+}
+.carousel-caption:hover{
+    background-color: var(--opacidades);
+    transition: all 0.5s ease;
+}
+.caption-fade {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+}
+
+/*Estilos footer gris*/
+.foot-gris{
+    background-color: var(--footer-gris);
+    color: var(--letra--footer-gris);
+}
+.foot-gris small {
+  font-size: 0.75rem; /* más chico que el normal */
+}
+/*Estilos footer guinda*/
+.footer-guinda-container{
+    background-color: var(--nav-footer);
+}
+.footer-guinda-container p{
+    font-weight: 100;
+}
+
+/*Estilos para formularios */
+#titulo-form{
+    color: var(--nav-footer);
+}
+.btn-form{
+    background-color: var(--nav-footer);
+    border: #363636 1px solid;
+}
+.btn-form:hover{
+    background-color: var(--opacidades);
+    
+    transition: all 0.5s ease;
+}
+/*estilos para la página de confirmación de datos*/
+.mnsj-confirmacion{
+    background-color: var(--nav-footer);
+    width: 800px;
+    display: flex;
+    border-radius: 20px;
+    padding: 0 9px;
+}
+.mnsj-confirmacion p{
+    color: var(--letra--footer-gris);
+    font-size: x-large;
+    text-align: center;
+}
 
 /* TODO: Estilos responsive */
