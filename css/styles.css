@@ -44,15 +44,25 @@
     transition: all 0.5s ease;
     color: var(--letra-cuerpo);
 }
-
-/*ESTILOS PERSONALIZADOS DE LOS NAVBAR BLANCOS*/
-.d-flex{
-    display: flex;
+.navbar-brand{
+  margin-left:55px ;
+  margin-right: 0px;
+}
+.nav-guinda-logos{
+  display: flex;
+  justify-content:space-between;
+}
+.logo-equipo{
+  margin-left: 10px;
 }
 .text-secondary #home-tab{
     color:var(--letra-secundaria);
     font-weight: 400;
 }
+#buttons{
+  display: flex;
+}
+/*ESTILOS NAV BAR GRIS*/
 .text-tertiary .nav-link{
     color: var(--letra-cuerpo);
 }
@@ -70,8 +80,21 @@
 
 
 /* Estilos para el slider */
-#slide{
-    height: 50vh;
+.carousel-container{
+mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    var(--opacidades-2)
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    var(--opacidades-2)
+  );
 }
 .carousel-img {
     height: 380px;          
@@ -104,7 +127,7 @@
     background-color: var(--opacidades);
     transition: all 0.5s ease;
 }
-.caption-fade {
+.caption-fade{
   -webkit-mask-image: linear-gradient(
     to right,
     transparent,
@@ -121,6 +144,202 @@
   );
 }
 
+
+/*estilos banner definición*/
+.banner-title{
+    color:var(--letra-cuerpo);
+}
+.banner-text{
+    text-align: justify;
+    color: var(--letra-cuerpo);
+}
+.banner-container{
+    background-color: var(--footer-gris);
+    overflow: hidden;
+}
+
+/*PARALLAX*/
+
+/* ==================== PARALLAX SECTION ==================== */
+.parallax-section {
+  position: relative;
+  height: 90vh;
+  min-height: 600px;
+  overflow: hidden;
+  background: #611232; /* fallback por si falla JS */
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+/* Fondo guinda oscuro */
+.bg-guinda {
+  background: linear-gradient(135deg, #4a0e26 0%, #611232 50%, #7a1740 100%);
+  width: 100%;
+  height: 120%; /* un poco más alto para que se mueva */
+}
+
+/* Imagen del personal */
+.staff-img {
+  width: 100%;
+  height: 110%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: brightness(1.1) contrast(1.2);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* Capa de texto */
+.text-layer {
+  z-index: 10;
+  pointer-events: none;
+}
+
+.text-layer h2 {
+  text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+  font-size: 3.5rem;
+}
+
+.text-layer .lead {
+  font-size: 1.4rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+}
+.parallax-title{
+    font-weight: 600;
+    color: var(--letra-cuerpo);
+}
+.parallax-text{
+    color: var(--letra-cuerpo);
+    font-weight: 500 ;
+    
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .parallax-section {
+    height: 70vh;
+  }
+  .text-layer h2 {
+    font-size: 2.5rem;
+  }
+  .text-layer .lead {
+    font-size: 1.1rem;
+  }
+}
+
+
+
+
+
+/*FLIPPED CARDS ACTIVIDADES CULTURALES*/
+.flipped-cards-container {
+  background-color: var(--footer-gris);
+  padding: 20px 0 15px;
+}
+
+
+.flipped-cards-container .flipped-cards-title {
+  background-color: var(--nav-footer);
+  width: 100%;            
+  max-width: 500px;       
+  margin: 0 auto;         
+  text-align: center;
+  border-radius: 20px;
+}
+
+.flipped-cards-container h2 {
+  color: var(--letra-cuerpo);
+  font-size: 1.8rem;
+}
+
+
+
+.cards-sub-container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  
+}
+.one-card {
+  width: 250px;
+  height: 330px; 
+  perspective: 1000px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.one-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* caras */
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  box-sizing: border-box;
+  color: var(--letra-cuerpo);
+}
+
+/* reverso gira 180 para quedar oculto inicialmente */
+.flip-back {
+  transform: rotateY(180deg);
+  font-size: larger;
+}
+.flip-front{
+    font-weight: 500;
+    font-size: larger;
+}
+/* evita que las imágenes estiren la tarjeta */
+.flip-front img,
+.flip-back img {
+  max-width: 90%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 8px auto 0;
+}
+
+.c1 { 
+    background-color: #a76987; 
+    
+}
+.c2 { 
+    background-color: #5b82a4; 
+}
+.c3 { 
+    background-color: #577d63; 
+}
+.c4 { 
+    background-color: #cea456; 
+}
+
+
 /*Estilos footer gris*/
 .foot-gris{
     background-color: var(--footer-gris);
@@ -136,8 +355,18 @@
 .footer-guinda-container p{
     font-weight: 100;
 }
-
-/*Estilos para formularios */
+.footer-guinda-container a {
+  display: block;
+  text-decoration: none;
+  color: var(--letra-cuerpo);
+  font-weight: 200;
+  margin: 10px 0;
+}
+.footer-guinda-container .special{
+  text-decoration: underline;
+}
+/*E
+stilos para formularios */
 #titulo-form{
     color: var(--nav-footer);
 }
@@ -156,12 +385,206 @@
     width: 800px;
     display: flex;
     border-radius: 20px;
-    padding: 0 9px;
+    padding: 1px  9px 0;
+    font-weight:500 ;
 }
 .mnsj-confirmacion p{
-    color: var(--letra--footer-gris);
+    color: var(--letra-cuerpo);
     font-size: x-large;
     text-align: center;
 }
+/*ESTILOS BANNER ALEBRIJES*/
+.alebrijes-container{
+  background-color: var(--nav-footer);
+  color: var(--letra-cuerpo);
+}
+#alebrijes-title{
+  color: var(--letra-cuerpo);
+}
 
-/* TODO: Estilos responsive */
+
+
+/* ESTILOS RESPONSIVOS */
+
+@media (max-width: 992px) {
+
+  .responsive-logo-bar img{
+      width:90%;
+      height: 90%;
+  }
+}
+@media (min-width: 400px) and (max-width: 600px) {
+
+ .logo-a{
+        width:40%;
+      height: 90%;
+ }
+  #image{
+      max-width: 50px;
+    }
+  
+}
+
+
+
+
+/* Altura responsive del carousel */
+.carousel-container .carousel {
+  max-height: 80vh;
+  height: 80vh;
+}
+
+.carousel-container .carousel-img {
+  height: 80vh;
+  object-fit: cover;           /* Importante: evita que las imágenes se deformen */
+  object-position: center;
+}
+
+/* Caption siempre visible y responsive */
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+/* Texto legible en todos los tamaños */
+.carousel-caption h5 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+/* Sombras para mejor legibilidad */
+.text-shadow {
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+}
+
+/* Responsive breakpoints */
+@media (max-width: 992px) {
+  .carousel-container .carousel,
+  .carousel-container .carousel-img {
+    height: 70vh;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 2rem;
+  }
+  .carousel-caption p {
+    font-size: 1.1rem;
+  }
+  .banner-img {
+        max-width: 250px;
+    }
+    #image{
+      max-width: 100px;
+    }
+    
+}
+
+@media (max-width: 768px) {
+  .carousel-container .carousel,
+  .carousel-container .carousel-img {
+    height: 60vh;
+  }
+  
+  .carousel-caption {
+    padding: 3rem 1.5rem 1.5rem;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 1.8rem;
+  }
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+  .banner-def{
+    margin: 0 auto;
+  }
+  .text-custom-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  .flipped-cards-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .flipped-cards-container .flipped-cards-title {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-container .carousel,
+  .carousel-container .carousel-img {
+    height: 55vh;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 1.5rem;
+  }
+  .carousel-caption p {
+    font-size: 0.95rem;
+  }
+  
+  .carousel-indicators {
+    bottom: 5px;
+  }
+    .flipped-cards-container h2 {
+    font-size: 1.2rem ;
+  }
+  .flipped-cards-container .flipped-cards-title {
+    border-radius: 10px;
+    max-width: 300px;
+  }
+  
+}
+
+.caption-fade {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (min-width: 1200px) {     /* xl y superiores */
+    .banner-img {
+        max-width: 300px;
+    }
+      #image{
+      max-width: 100px;
+    }
+}
+@media (min-width: 768px) {
+  .nav-main-buttons {
+    flex-direction: row; /* Se ponen uno al lado del otro */
+    justify-content: center;
+  }
+
+  .nav-main-buttons a button {
+    width: auto; /* Ya no ocupan todo el ancho */
+  }
+    #image{
+      max-width: 100px;
+    }
+}
+
+
