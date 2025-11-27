@@ -23,9 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Bloquear caracteres inválidos en el campo de usuario (número de empleado)
-    bloquearCaracteresInvalidosEnNumeroEmpleado(inputUsuario);
-
     // Validación en tiempo real de la contraseña
     inputPassword.addEventListener('blur', function() {
         validarCampoPassword(this);
