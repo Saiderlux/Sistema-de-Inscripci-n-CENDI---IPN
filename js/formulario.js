@@ -134,6 +134,19 @@ function inicializarValidaciones() {
     bloquearCaracteresInvalidosEnLugar(document.getElementById('trab_lugar_nacimiento'));
     bloquearCaracteresInvalidosEnLugar(document.getElementById('ADSCRIPCION'));
     
+    // Bloquear caracteres inválidos en teléfonos
+    bloquearCaracteresInvalidosEnTelefono(document.getElementById('CONTACTONINO'));
+    
+    // Bloquear caracteres inválidos en CURP
+    bloquearCaracteresInvalidosEnCURP(document.getElementById('CURPNINO'));
+    bloquearCaracteresInvalidosEnCURP(document.getElementById('CURPT'));
+    
+    // Bloquear caracteres inválidos en código postal
+    bloquearCaracteresInvalidosEnCodigoPostal(document.getElementById('CPNINO'));
+    
+    // Bloquear caracteres inválidos en grupo sanguíneo
+    bloquearCaracteresInvalidosEnGrupoSanguineo(document.getElementById('SANGRE'));
+    
     // Bloquear caracteres inválidos en número de empleado
     bloquearCaracteresInvalidosEnNumeroEmpleado(document.getElementById('NumE'));
     

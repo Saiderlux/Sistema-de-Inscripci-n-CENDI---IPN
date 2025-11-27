@@ -702,3 +702,317 @@ function bloquearCaracteresInvalidosEnEmail(campo) {
         this.dispatchEvent(new Event('input', { bubbles: true }));
     });
 }
+
+/**
+ * Bloquea la entrada de caracteres no permitidos en campos de teléfono
+ * Muestra un tooltip temporal cuando se intenta escribir un carácter inválido
+ * @param {HTMLElement} campo - Elemento del campo de entrada
+ */
+function bloquearCaracteresInvalidosEnTelefono(campo) {
+    if (!campo) return;
+    
+    let tooltip = campo.parentElement.querySelector('.tooltip-caracteres-invalidos');
+    if (!tooltip) {
+        tooltip = document.createElement('div');
+        tooltip.className = 'tooltip-caracteres-invalidos';
+        tooltip.style.cssText = `
+            position: absolute;
+            background-color: #dc3545;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            white-space: nowrap;
+            animation: fadeInOut 2s ease-in-out;
+        `;
+        tooltip.textContent = '⚠️ Solo se permiten números (10 dígitos)';
+        campo.parentElement.style.position = 'relative';
+        campo.parentElement.appendChild(tooltip);
+    }
+    
+    campo.addEventListener('keypress', function(e) {
+        const char = e.key;
+        if (e.ctrlKey || e.altKey || e.metaKey || 
+            char === 'Backspace' || char === 'Delete' || 
+            char === 'Tab' || char === 'Enter' || char === 'ArrowLeft' || char === 'ArrowRight') {
+            return;
+        }
+        
+        const esValido = /^\d$/.test(char);
+        
+        if (!esValido) {
+            e.preventDefault();
+            tooltip.style.display = 'block';
+            tooltip.style.left = '0';
+            tooltip.style.top = '-35px';
+            setTimeout(() => { tooltip.style.display = 'none'; }, 2000);
+        }
+        
+        // Limitar a 10 dígitos
+        if (this.value.length >= 10) {
+            e.preventDefault();
+        }
+    });
+    
+    campo.addEventListener('paste', function(e) {
+        e.preventDefault();
+        const texto = (e.clipboardData || window.clipboardData).getData('text');
+        const textoLimpio = texto.replace(/\D/g, '').substring(0, 10);
+        
+        if (texto !== textoLimpio) {
+            tooltip.style.display = 'block';
+            tooltip.style.left = '0';
+            tooltip.style.top = '-35px';
+            setTimeout(() => { tooltip.style.display = 'none'; }, 2000);
+        }
+        
+        const inicio = this.selectionStart;
+        const fin = this.selectionEnd;
+        const valorActual = this.value;
+        const nuevoValor = valorActual.substring(0, inicio) + textoLimpio + valorActual.substring(fin);
+        this.value = nuevoValor.substring(0, 10); // Limitar a 10 dígitos
+        this.selectionStart = this.selectionEnd = Math.min(inicio + textoLimpio.length, 10);
+        this.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+}
+
+/**
+ * Bloquea la entrada de caracteres no permitidos en CURP
+ * Muestra un tooltip temporal cuando se intenta escribir un carácter inválido
+ * @param {HTMLElement} campo - Elemento del campo de entrada
+ */
+function bloquearCaracteresInvalidosEnCURP(campo) {
+    if (!campo) return;
+    
+    let tooltip = campo.parentElement.querySelector('.tooltip-caracteres-invalidos');
+    if (!tooltip) {
+        tooltip = document.createElement('div');
+        tooltip.className = 'tooltip-caracteres-invalidos';
+        tooltip.style.cssText = `
+            position: absolute;
+            background-color: #dc3545;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            white-space: nowrap;
+            animation: fadeInOut 2s ease-in-out;
+        `;
+        tooltip.textContent = '⚠️ Solo letras y números (18 caracteres)';
+        campo.parentElement.style.position = 'relative';
+        campo.parentElement.appendChild(tooltip);
+    }
+    
+    campo.addEventListener('keypress', function(e) {
+        const char = e.key;
+        if (e.ctrlKey || e.altKey || e.metaKey || 
+            char === 'Backspace' || char === 'Delete' || 
+            char === 'Tab' || char === 'Enter' || char === 'ArrowLeft' || char === 'ArrowRight') {
+            return;
+        }
+        
+        const esValido = /^[a-zA-Z0-9]$/.test(char);
+        
+        if (!esValido) {
+            e.preventDefault();
+            tooltip.style.display = 'block';
+            tooltip.style.left = '0';
+            tooltip.style.top = '-35px';
+            setTimeout(() => { tooltip.style.display = 'none'; }, 2000);
+        }
+        
+        // Limitar a 18 caracteres
+        if (this.value.length >= 18) {
+            e.preventDefault();
+        }
+    });
+    
+    campo.addEventListener('input', function() {
+        // Convertir a mayúsculas automáticamente
+        this.value = this.value.toUpperCase();
+    });
+    
+    campo.addEventListener('paste', function(e) {
+        e.preventDefault();
+        const texto = (e.clipboardData || window.clipboardData).getData('text');
+        const textoLimpio = texto.replace(/[^a-zA-Z0-9]/g, '').toUpperCase().substring(0, 18);
+        
+        if (texto.toUpperCase() !== textoLimpio) {
+            tooltip.style.display = 'block';
+            tooltip.style.left = '0';
+            tooltip.style.top = '-35px';
+            setTimeout(() => { tooltip.style.display = 'none'; }, 2000);
+        }
+        
+        const inicio = this.selectionStart;
+        const fin = this.selectionEnd;
+        const valorActual = this.value;
+        const nuevoValor = valorActual.substring(0, inicio) + textoLimpio + valorActual.substring(fin);
+        this.value = nuevoValor.substring(0, 18);
+        this.selectionStart = this.selectionEnd = Math.min(inicio + textoLimpio.length, 18);
+        this.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+}
+
+/**
+ * Bloquea la entrada de caracteres no permitidos en código postal
+ * Muestra un tooltip temporal cuando se intenta escribir un carácter inválido
+ * @param {HTMLElement} campo - Elemento del campo de entrada
+ */
+function bloquearCaracteresInvalidosEnCodigoPostal(campo) {
+    if (!campo) return;
+    
+    let tooltip = campo.parentElement.querySelector('.tooltip-caracteres-invalidos');
+    if (!tooltip) {
+        tooltip = document.createElement('div');
+        tooltip.className = 'tooltip-caracteres-invalidos';
+        tooltip.style.cssText = `
+            position: absolute;
+            background-color: #dc3545;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            white-space: nowrap;
+            animation: fadeInOut 2s ease-in-out;
+        `;
+        tooltip.textContent = '⚠️ Solo se permiten números (5 dígitos)';
+        campo.parentElement.style.position = 'relative';
+        campo.parentElement.appendChild(tooltip);
+    }
+    
+    campo.addEventListener('keypress', function(e) {
+        const char = e.key;
+        if (e.ctrlKey || e.altKey || e.metaKey || 
+            char === 'Backspace' || char === 'Delete' || 
+            char === 'Tab' || char === 'Enter' || char === 'ArrowLeft' || char === 'ArrowRight') {
+            return;
+        }
+        
+        const esValido = /^\d$/.test(char);
+        
+        if (!esValido) {
+            e.preventDefault();
+            tooltip.style.display = 'block';
+            tooltip.style.left = '0';
+            tooltip.style.top = '-35px';
+            setTimeout(() => { tooltip.style.display = 'none'; }, 2000);
+        }
+        
+        // Limitar a 5 dígitos
+        if (this.value.length >= 5) {
+            e.preventDefault();
+        }
+    });
+    
+    campo.addEventListener('paste', function(e) {
+        e.preventDefault();
+        const texto = (e.clipboardData || window.clipboardData).getData('text');
+        const textoLimpio = texto.replace(/\D/g, '').substring(0, 5);
+        
+        if (texto !== textoLimpio) {
+            tooltip.style.display = 'block';
+            tooltip.style.left = '0';
+            tooltip.style.top = '-35px';
+            setTimeout(() => { tooltip.style.display = 'none'; }, 2000);
+        }
+        
+        const inicio = this.selectionStart;
+        const fin = this.selectionEnd;
+        const valorActual = this.value;
+        const nuevoValor = valorActual.substring(0, inicio) + textoLimpio + valorActual.substring(fin);
+        this.value = nuevoValor.substring(0, 5);
+        this.selectionStart = this.selectionEnd = Math.min(inicio + textoLimpio.length, 5);
+        this.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+}
+
+/**
+ * Bloquea la entrada de caracteres no permitidos en grupo sanguíneo
+ * Muestra un tooltip temporal cuando se intenta escribir un carácter inválido
+ * @param {HTMLElement} campo - Elemento del campo de entrada
+ */
+function bloquearCaracteresInvalidosEnGrupoSanguineo(campo) {
+    if (!campo) return;
+    
+    let tooltip = campo.parentElement.querySelector('.tooltip-caracteres-invalidos');
+    if (!tooltip) {
+        tooltip = document.createElement('div');
+        tooltip.className = 'tooltip-caracteres-invalidos';
+        tooltip.style.cssText = `
+            position: absolute;
+            background-color: #dc3545;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            white-space: nowrap;
+            animation: fadeInOut 2s ease-in-out;
+        `;
+        tooltip.textContent = '⚠️ Formato: A+, B-, AB+, O-';
+        campo.parentElement.style.position = 'relative';
+        campo.parentElement.appendChild(tooltip);
+    }
+    
+    campo.addEventListener('keypress', function(e) {
+        const char = e.key;
+        if (e.ctrlKey || e.altKey || e.metaKey || 
+            char === 'Backspace' || char === 'Delete' || 
+            char === 'Tab' || char === 'Enter' || char === 'ArrowLeft' || char === 'ArrowRight') {
+            return;
+        }
+        
+        const esValido = /^[ABOabo+\-]$/.test(char);
+        
+        if (!esValido) {
+            e.preventDefault();
+            tooltip.style.display = 'block';
+            tooltip.style.left = '0';
+            tooltip.style.top = '-35px';
+            setTimeout(() => { tooltip.style.display = 'none'; }, 2000);
+        }
+        
+        // Limitar a 3 caracteres
+        if (this.value.length >= 3) {
+            e.preventDefault();
+        }
+    });
+    
+    campo.addEventListener('input', function() {
+        // Convertir a mayúsculas automáticamente
+        this.value = this.value.toUpperCase();
+    });
+    
+    campo.addEventListener('paste', function(e) {
+        e.preventDefault();
+        const texto = (e.clipboardData || window.clipboardData).getData('text');
+        const textoLimpio = texto.replace(/[^ABOabo+\-]/g, '').toUpperCase().substring(0, 3);
+        
+        if (texto.toUpperCase() !== textoLimpio) {
+            tooltip.style.display = 'block';
+            tooltip.style.left = '0';
+            tooltip.style.top = '-35px';
+            setTimeout(() => { tooltip.style.display = 'none'; }, 2000);
+        }
+        
+        const inicio = this.selectionStart;
+        const fin = this.selectionEnd;
+        const valorActual = this.value;
+        const nuevoValor = valorActual.substring(0, inicio) + textoLimpio + valorActual.substring(fin);
+        this.value = nuevoValor.substring(0, 3);
+        this.selectionStart = this.selectionEnd = Math.min(inicio + textoLimpio.length, 3);
+        this.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+}
